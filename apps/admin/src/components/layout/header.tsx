@@ -1,15 +1,36 @@
+import type {ReactNode, ComponentPropsWithoutRef, ElementType} from 'react';
+import clsx from "clsx";
+
+type HeadingLevel = 1 | 2 | 3 | 4 | 5 | 6
+
 type HeaderProps = {
-    title?: string
+    level?: HeadingLevel
+    children?: ReactNode
+    className?: string
+} & ComponentPropsWithoutRef<'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'>
+
+export function Heading({ level = 1, className, children, ...props }: HeaderProps) {
+    const Element = `h${level}` as ElementType
+
+    return (
+        <Element
+            {...props}
+            className={clsx('text-2xl font-semibold text-zinc-950 dark:text-white', className)}
+        >
+            {children}
+        </Element>
+    )
 }
 
-export function Header({ title = 'Dashboard' }: HeaderProps) {
-    return (
-        <header className="border-b border-zinc-200 bg-white px-6 py-4">
-            <div className="flex items-center justify-between">
-                <h1 className="text-xl font-semibold text-zinc-900">{title}</h1>
+export function Subheading({ level = 2, className, children, ...props }: HeaderProps) {
+    const Element = `h${level}` as ElementType
 
-                <div className="text-sm text-zinc-500">KSC Admin</div>
-            </div>
-        </header>
+    return (
+        <Element
+            {...props}
+            className={clsx('text-2xl font-semibold text-zinc-950 dark:text-white', className)}
+        >
+            {children}
+        </Element>
     )
 }

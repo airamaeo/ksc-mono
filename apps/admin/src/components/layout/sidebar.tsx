@@ -11,7 +11,7 @@ export function Sidebar() {
         <aside className="w-64 border-r border-zinc-200 bg-zinc-50 p-4">
             <div className="mb-6">
                 <h2 className="text-lg font-bold text-zinc-900">KSC Admin</h2>
-                <p className="text-sm text-zinc-500">Korean skincare admin panel</p>
+                <p className="text-sm text-zinc-500">Korean skincare admin side panel</p>
             </div>
 
             <nav className="flex flex-col gap-2">
