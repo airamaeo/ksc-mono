@@ -1,28 +1,22 @@
-const navItems = [
-    { label: 'Dashboard' },
-    { label: 'Products' },
-    { label: 'Brands' },
-    { label: 'Categories' },
-    { label: 'Settings' },
-]
+import { Link } from '@tanstack/react-router'
 
 export function Sidebar() {
     return (
-        <aside className="w-64 border-r border-zinc-200 bg-zinc-50 p-4">
-            <div className="mb-6">
-                <h2 className="text-lg font-bold text-zinc-900">KSC Admin</h2>
-                <p className="text-sm text-zinc-500">Korean skincare admin side panel</p>
-            </div>
-
+        <aside className="w-64 border-r border-zinc-200 bg-white p-4 dark:border-zinc-800 dark:bg-zinc-950">
             <nav className="flex flex-col gap-2">
-                {navItems.map((item) => (
-                    <div
-                        key={item.label}
-                        className="rounded-md px-3 py-2 text-sm text-zinc-700 hover:bg-zinc-100"
-                    >
-                        {item.label}
-                    </div>
-                ))}
+                <Link
+                    to='/'
+                    className="rounded-md px-3 py-2 text-sm font-medium text-zinc-700 hover:bg-zinc-100 dark:text-zinc-200 dark:hover:bg-zinc-800"
+                >
+                    Dashboard
+                </Link>
+
+                <Link
+                    to='/products'
+                    className="rounded-md px-3 py-2 text-sm font-medium text-zinc-700 hover:bg-zinc-100 dark:text-zinc-200 dark:hover:bg-zinc-800"
+                >
+                    Products
+                </Link>
             </nav>
         </aside>
     )
