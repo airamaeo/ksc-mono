@@ -1,13 +1,13 @@
 import { createFileRoute } from '@tanstack/react-router'
-import { Layout } from '../components/layout/layout'
+import {SidebarLayout} from "../components/layout/sidebar-layout.tsx";
 
 function ProductsPage() {
     return (
-        <Layout title="Products">
+        <SidebarLayout title="Products">
             <div>
                 <p>This is the products page.</p>
             </div>
-        </Layout>
+        </SidebarLayout>
     )
 }
 
